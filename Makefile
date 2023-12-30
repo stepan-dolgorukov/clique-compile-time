@@ -6,5 +6,5 @@ FLAGS_CXX ?= \
 clique: clique.o
 	${CXX} ${FLAGS_CXX} $^ -o $@
 
-%.o: %.cc
-	${CXX} ${FLAGS_CXX} -c $^ -o $@
+clique.o: clique.cc clique.hh
+	${CXX} ${FLAGS_CXX} -c $^
