@@ -204,5 +204,11 @@ int main() {
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0
   };
 
-  cout<<(Clique<4, decltype(g)>{g}());
+  cout
+    << Clique<3, decltype(g)>{g}()
+    << ' '
+    << Clique<4, decltype(g)>{g}()
+    << ' '
+    << Clique<5, decltype(g)>{g}()
+    << '\n';
 }
