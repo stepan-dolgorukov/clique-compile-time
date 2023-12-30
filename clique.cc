@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include <array>
+#include <iostream>
 #include "clique.hh"
 
 using namespace std;
