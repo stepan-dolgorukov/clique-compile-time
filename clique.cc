@@ -2,10 +2,8 @@
 #include <iostream>
 #include "clique.hh"
 
-using namespace std;
-
 int main() {
-  constexpr array<array<int, 23>, 23> g{
+  constexpr std::array<std::array<int, 23>, 23> g{
     0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -31,7 +29,7 @@ int main() {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0
   };
 
-  cout
+  std::cout
     << Clique<3, decltype(g)>{g}()
     << ' '
     << Clique<4, decltype(g)>{g}()
