@@ -13,17 +13,20 @@ class Clique_3 {
     consteval bool operator()() {
       for (int a=0; a<size(graph); ++a) {
         for (int b=0; b<size(graph); ++b) {
-          for (int c=0; c<size(graph); ++c) {
 
-            if (b == a || 
-                c == a ||
+          if (b == a ||
+              0 == graph[a][b]) {
+            continue;
+          }
+
+          for (int c=0; c<size(graph); ++c) {
+            if (c == a ||
                 c == b) {
               continue;
             }
 
-            if (graph[a][b] &&
-                graph[b][c] &&
-                graph[c][a]) {
+            if (1 == graph[b][c] &&
+                1 == graph[c][a]) {
               return true;
             }
           }
