@@ -48,28 +48,32 @@ class Clique_4 {
     consteval bool operator()() {
       for (int a=0; a<size(graph); ++a) {
         for (int b=0; b<size(graph); ++b) {
-          for (int c=0; c<size(graph); ++c) {
-            for(int d=0; d<size(graph); ++d) {
 
-              if (b == a ||
-                  c == a ||
-                  c == b ||
-                  d == a ||
+          if (b == a ||
+              0 == graph[a][b]) {
+            continue;
+          }
+
+          for (int c=0; c<size(graph); ++c) {
+
+            if (c == b ||
+                c == a ||
+                0 == graph[a][c] ||
+                0 == graph[b][c]) {
+              continue;
+            }
+
+            for (int d=0; d<size(graph); ++d) {
+
+              if (d == a ||
                   d == b ||
                   d == c) {
-                
                 continue;
               }
 
-              if (graph[a][b] &&
-                  graph[a][c] &&
-                  graph[a][d] &&
-
-                  graph[b][c] &&
+              if (graph[a][d] &&
                   graph[b][d] &&
-
                   graph[c][d]) {
-                  
                   return true;
               }
             }
