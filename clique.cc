@@ -1,5 +1,6 @@
 #include <array>
 #include <iostream>
+
 #include "clique.hh"
 
 int main() {
