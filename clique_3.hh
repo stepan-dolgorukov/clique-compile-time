@@ -1,6 +1,8 @@
 #ifndef CLIQUE_3_HH
 #define CLIQUE_3_HH
 
+#include "factorial.hh"
+
 template<typename Graph>
 class Clique_3 {
   private:
@@ -10,7 +12,9 @@ class Clique_3 {
     consteval Clique_3(Graph g) : graph{g} {
     }
 
-    consteval bool operator()() {
+    consteval int operator()() {
+      int quantity_cliques = 0;
+
       for (int a=0; a<size(graph); ++a) {
         for (int b=0; b<size(graph); ++b) {
 
@@ -27,12 +31,12 @@ class Clique_3 {
 
             if (1 == graph[b][c] &&
                 1 == graph[c][a]) {
-              return true;
+              ++quantity_cliques;
             }
           }
         }
       }
-      return false;
+      return quantity_cliques / factorial<int, 3>();
     }
 };
 

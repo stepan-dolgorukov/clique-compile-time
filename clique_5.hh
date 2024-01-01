@@ -10,7 +10,9 @@ class Clique_5 {
     consteval Clique_5(Graph g) : graph{g} {
     }
 
-    consteval bool operator()() {
+    consteval int operator()() {
+      int quantity_cliques = 0;
+
       for (int a=0; a<size(graph); ++a) {
         for (int b=0; b<size(graph); ++b) {
 
@@ -52,7 +54,7 @@ class Clique_5 {
                     1 == graph[b][e] &&
                     1 == graph[c][e] &&
                     1 == graph[d][e]) {
-                    return true;
+                    ++quantity_cliques;
                 }
               }
 
@@ -61,7 +63,7 @@ class Clique_5 {
         }
       }
 
-      return false;
+      return quantity_cliques;
     }
 };
 

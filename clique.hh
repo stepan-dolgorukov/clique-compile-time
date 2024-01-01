@@ -18,7 +18,7 @@ class Clique {
     consteval Clique(Graph g) : graph{g} {
     }
 
-    consteval bool operator()() {
+    consteval int operator()() {
       switch (SizeClique) {
         case 0u:
         case 1u:
