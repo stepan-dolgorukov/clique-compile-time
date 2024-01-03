@@ -2,6 +2,7 @@
 #define CLIQUE_HH
 
 #include <cstddef>
+
 #include "clique_3.hh"
 #include "clique_4.hh"
 #include "clique_5.hh"
