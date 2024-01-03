@@ -19,7 +19,7 @@ class Clique {
     consteval Clique(Graph g) : graph{g} {
     }
 
-    consteval int operator()() {
+    consteval int operator()() const {
       switch (SizeClique) {
         case 0u:
         case 1u:
