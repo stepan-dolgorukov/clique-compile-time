@@ -2,7 +2,7 @@
 #define FACTORIAL_H
 
 template<typename TypeN, TypeN N>
-consteval TypeN factorial(void){
+consteval TypeN factorial(void) {
   if (0==N || 1==N) {
     return 1;
   }
