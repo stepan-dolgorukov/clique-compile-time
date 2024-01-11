@@ -34,7 +34,7 @@ class Clique {
           return Clique_4(graph)();
       }
 
-      return false;
+      return 0;
     }
 };
 
