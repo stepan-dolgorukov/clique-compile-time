@@ -1,4 +1,4 @@
-SHELL := bash
+SHELL ?= bash
 CXX ?= g++
 FLAGS_CXX += \
 --std=c++20
