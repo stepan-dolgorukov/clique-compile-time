@@ -31,6 +31,8 @@ int main() {
   };
 
   std::cout
+    << "1: " << Clique<1, decltype(g)>{g}() << '\n'
+    << "2: " << Clique<2, decltype(g)>{g}() << '\n'
     << "3: " << Clique<3, decltype(g)>{g}() << '\n'
     << "4: " << Clique<4, decltype(g)>{g}() << '\n'
     << "5: " << Clique<5, decltype(g)>{g}() << '\n';
