@@ -9,5 +9,13 @@ clique.o
 
 clique.o: \
 clique.cc \
-clique.hh
+clique.hh.gch
 	${CXX} ${FLAGS_CXX} -c $<
+
+clique.hh.gch: \
+clique.hh \
+clique_2.hh \
+clique_3.hh \
+clique_4.hh \
+clique_5.hh
+	${CXX} ${FLAGS_CXX} $<
