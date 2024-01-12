@@ -24,8 +24,10 @@ class Clique {
       switch (SizeClique) {
         case 0u:
         case 1u:
-        case 2u:
           return true;
+
+        case 2u:
+          return Clique_2(graph)();
 
         case 3u:
           return Clique_3(graph)();
