@@ -14,8 +14,24 @@ clique.hh.gch
 
 clique.hh.gch: \
 clique.hh \
-clique_2.hh \
-clique_3.hh \
-clique_4.hh \
+clique_2.hh.gch \
+clique_3.hh.gch \
+clique_4.hh.gch \
+clique_5.hh.gch
+	${CXX} ${FLAGS_CXX} $<
+
+clique_2.hh.gch: \
+clique_2.hh
+	${CXX} ${FLAGS_CXX} $<
+
+clique_3.hh.gch: \
+clique_3.hh
+	${CXX} ${FLAGS_CXX} $<
+
+clique_4.hh.gch: \
+clique_4.hh
+	${CXX} ${FLAGS_CXX} $<
+
+clique_5.hh.gch: \
 clique_5.hh
 	${CXX} ${FLAGS_CXX} $<
