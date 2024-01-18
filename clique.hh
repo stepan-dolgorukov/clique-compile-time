@@ -13,32 +13,32 @@ using namespace std;
 template<size_t SizeClique>
 class Clique {
   private:
-    size_t count_cliques = 0u;
+    size_t quantity_cliques = 0u;
 
   public:
     template<typename TypeGraph>
     consteval Clique(TypeGraph graph) {
       switch(SizeClique){
         case 2u:
-          count_cliques = Clique_2{graph}();
+          quantity_cliques = Clique_2{graph}();
           break;
 
         case 3u:
-          count_cliques = Clique_3{graph}();
+          quantity_cliques = Clique_3{graph}();
           break;
 
         case 4u:
-          count_cliques = Clique_4{graph}();
+          quantity_cliques = Clique_4{graph}();
           break;
 
         case 5u:
-          count_cliques = Clique_5{graph}();
+          quantity_cliques = Clique_5{graph}();
           break;
       }
     }
 
     consteval int operator()(void) const {
-      return count_cliques;
+      return quantity_cliques;
     }
 };
 
