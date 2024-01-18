@@ -10,33 +10,35 @@
 
 using namespace std;
 
-template<size_t SizeClique, typename Graph>
+template<size_t SizeClique>
 class Clique {
   private:
-    const Graph graph;
-    const size_t size_clique = SizeClique;
+    size_t count_cliques = 0u;
 
   public:
-    consteval Clique(Graph g) : graph{g} {
+    template<typename TypeGraph>
+    consteval Clique(TypeGraph graph) {
+      switch(SizeClique){
+        case 2u:
+          count_cliques = Clique_2{graph}();
+          break;
+
+        case 3u:
+          count_cliques = Clique_3{graph}();
+          break;
+
+        case 4u:
+          count_cliques = Clique_4{graph}();
+          break;
+
+        case 5u:
+          count_cliques = Clique_5{graph}();
+          break;
+      }
     }
 
     consteval int operator()(void) const {
-      switch (SizeClique) {
-        case 0u:
-        case 1u:
-          return true;
-
-        case 2u:
-          return Clique_2(graph)();
-
-        case 3u:
-          return Clique_3(graph)();
-
-        case 4u:
-          return Clique_4(graph)();
-      }
-
-      return 0;
+      return count_cliques;
     }
 };
 
