@@ -35,7 +35,7 @@ class Clique {
       }
     }
 
-    consteval std::size_t operator()(void) const {
+    consteval auto operator()(void) const {
       return quantity_cliques;
     }
 };
