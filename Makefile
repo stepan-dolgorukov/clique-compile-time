@@ -1,6 +1,6 @@
 SHELL ?= bash
 CXX ?= g++
-FLAGS_CXX += \
+FLAGS_CXX ?= \
 --std=c++20
 
 clique: \
