@@ -42,4 +42,9 @@ class Clique {
     }
 };
 
+template<size_t SizeClique, auto Graph>
+consteval auto clique(void) {
+  return Clique<SizeClique>{Graph}();
+}
+
 #endif
