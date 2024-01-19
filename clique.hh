@@ -8,12 +8,10 @@
 #include "clique_4.hh"
 #include "clique_5.hh"
 
-using namespace std;
-
 template<size_t SizeClique>
 class Clique {
   private:
-    size_t quantity_cliques = 0u;
+    std::size_t quantity_cliques = 0u;
 
   public:
     template<typename TypeGraph>
@@ -37,12 +35,12 @@ class Clique {
       }
     }
 
-    consteval size_t operator()(void) const {
+    consteval std::size_t operator()(void) const {
       return quantity_cliques;
     }
 };
 
-template<size_t SizeClique, auto Graph>
+template<std::size_t SizeClique, auto Graph>
 consteval auto clique(void) {
   return Clique<SizeClique>{Graph}();
 }
