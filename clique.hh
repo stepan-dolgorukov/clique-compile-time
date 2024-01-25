@@ -3,6 +3,7 @@
 
 #include <cstddef>
 
+#include "clique_1.hh"
 #include "clique_2.hh"
 #include "clique_3.hh"
 #include "clique_4.hh"
@@ -17,6 +18,10 @@ class Clique {
     template<typename TypeGraph>
     consteval Clique(TypeGraph graph) {
       switch(SizeClique){
+        case 1u:
+          quantity_cliques = Clique_1{graph}();
+          break;
+
         case 2u:
           quantity_cliques = Clique_2{graph}();
           break;
