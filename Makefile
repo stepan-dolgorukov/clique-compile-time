@@ -1,3 +1,5 @@
+# vim: textwidth=80 filetype=make
+
 SHELL ?= bash
 CXX ?= g++
 FLAGS_CXX ?= \
