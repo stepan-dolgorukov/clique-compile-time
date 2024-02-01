@@ -15,7 +15,7 @@ namespace cct
   class Clique
   {
     private:
-      std::size_t quantity_cliques = 0u;
+      std::size_t quantity_cliques{ 0u };
 
     public:
       template< typename TypeGraph >
