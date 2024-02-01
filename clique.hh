@@ -9,7 +9,7 @@
 #include "clique_4.hh"
 #include "clique_5.hh"
 
-template<size_t SizeClique>
+template<std::size_t SizeClique>
 class Clique
 {
   private:
