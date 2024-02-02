@@ -4,15 +4,17 @@
 namespace cct
 {
   template<typename Graph>
-  class Clique_1 {
+  class Clique_1
+  {
     private:
       const Graph graph;
 
     public:
-      consteval Clique_1(Graph g) : graph{g} {
-      }
+      consteval Clique_1(Graph g) : graph{g}
+      {}
 
-      consteval int operator()(void) const {
+      consteval int operator()(void) const
+      {
         return graph.size();
       }
   };
