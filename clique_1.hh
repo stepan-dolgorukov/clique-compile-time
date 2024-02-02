@@ -1,19 +1,21 @@
 #ifndef CLIQUE_1_HH
 #define CLIQUE_1_HH
 
-template<typename Graph>
-class Clique_1 {
-  private:
-    const Graph graph;
+namespace cct
+{
+  template<typename Graph>
+  class Clique_1 {
+    private:
+      const Graph graph;
 
-  public:
-    consteval Clique_1(Graph g) : graph{g} {
-    }
+    public:
+      consteval Clique_1(Graph g) : graph{g} {
+      }
 
-    consteval int operator()(void) const {
-      return graph.size();
-    }
-};
-
+      consteval int operator()(void) const {
+        return graph.size();
+      }
+  };
+}
 
 #endif
