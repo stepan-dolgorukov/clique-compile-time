@@ -15,7 +15,7 @@ namespace cct
 
       consteval int operator()( void ) const
       {
-        int quantity_cliques = 0;
+        int quantity_cliques{ 0 };
 
         for (int a = 0; a < size( graph ); ++a)
         {
