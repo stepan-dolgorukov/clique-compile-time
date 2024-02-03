@@ -1,6 +1,8 @@
 #ifndef CLIQUE_2_HH
 #define CLIQUE_2_HH
 
+#include <cstddef>
+
 namespace cct
 {
   template< typename Graph >
@@ -13,9 +15,9 @@ namespace cct
       consteval Clique_2( Graph g ) : graph{ g }
       {}
 
-      consteval int operator()( void ) const
+      consteval std::size_t operator()( void ) const
       {
-        int quantity_cliques{ 0 };
+        std::size_t quantity_cliques{ 0u };
 
         for (int a = 0; a < size( graph ); ++a)
         {
