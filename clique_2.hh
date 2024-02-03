@@ -15,7 +15,7 @@ namespace cct
       consteval Clique_2( Graph g ) : graph{ g }
       {}
 
-      consteval std::size_t operator()( void ) const
+      consteval auto operator()( void ) const
       {
         std::size_t quantity_cliques{ 0u };
 
