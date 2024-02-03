@@ -33,9 +33,9 @@ int main()
   };
 
   std::cout <<
-    "1: " << clique< 1, g >() << '\n' <<
-    "2: " << clique< 2, g >() << '\n' <<
-    "3: " << clique< 3, g >() << '\n' <<
-    "4: " << clique< 4, g >() << '\n' <<
-    "5: " << clique< 5, g >() << '\n';
+    "1: " << cct::clique< 1 >( g ) << '\n' <<
+    "2: " << cct::clique< 2 >( g ) << '\n' <<
+    "3: " << cct::clique< 3 >( g ) << '\n' <<
+    "4: " << cct::clique< 4 >( g ) << '\n' <<
+    "5: " << cct::clique< 5 >( g ) << '\n';
 }

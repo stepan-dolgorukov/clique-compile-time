@@ -51,8 +51,8 @@ namespace cct
       }
   };
 
-  template< std::size_t SizeClique, auto Graph >
-  consteval auto clique( void )
+  template< std::size_t SizeClique >
+  consteval auto clique( auto Graph )
   {
     return Clique< SizeClique >{ Graph }();
   }
