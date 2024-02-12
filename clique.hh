@@ -45,14 +45,16 @@ namespace cct
         }
       }
 
-      consteval auto operator()( void ) const
+      auto
+      consteval operator()( void ) const
       {
         return quantity_cliques;
       }
   };
 
   template< std::size_t SizeClique >
-  consteval auto clique( auto Graph )
+  auto
+  consteval clique( auto Graph )
   {
     return Clique< SizeClique >{ Graph }();
   }

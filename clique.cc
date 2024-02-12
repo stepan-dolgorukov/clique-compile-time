@@ -3,7 +3,8 @@
 
 #include "clique.hh"
 
-int main( void )
+int
+main( void )
 {
   constexpr std::array< std::array< int, 23 >, 23 > g
   {
