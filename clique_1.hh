@@ -13,7 +13,7 @@ namespace cct
       consteval Clique_1(Graph g) : graph{g}
       {}
 
-      consteval int operator()(void) const
+      consteval auto operator()(void) const
       {
         return graph.size();
       }
