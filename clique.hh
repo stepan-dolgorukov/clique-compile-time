@@ -18,8 +18,7 @@ namespace cct
       std::size_t quantity_cliques{ 0u };
 
     public:
-      template< typename TypeGraph >
-      consteval Clique( TypeGraph graph )
+      consteval Clique( auto graph )
       {
         switch ( SizeClique )
         {
