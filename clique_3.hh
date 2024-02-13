@@ -13,7 +13,7 @@ class Clique_3
     consteval Clique_3( Graph g ) : graph{ g }
     {}
 
-    int
+    auto
     consteval operator()( void ) const
     {
       int quantity_cliques = 0;
