@@ -20,11 +20,11 @@ namespace cct
       {
         std::size_t quantity_cliques{ 0u };
 
-        for (std::size_t a{ 0u }; a < size( graph ); ++a)
+        for( std::size_t a{ 0u }; a < size( graph ); ++a )
         {
-          for (std::size_t b{ 1u + a }; b < size( graph ); ++b)
+          for( std::size_t b{ 1u + a }; b < size( graph ); ++b )
           {
-            if (1 == graph[ a ][ b ])
+            if( 1 == graph[ a ][ b ] )
             {
               ++quantity_cliques;
             }
