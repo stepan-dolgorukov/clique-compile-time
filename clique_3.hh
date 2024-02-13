@@ -1,6 +1,8 @@
 #ifndef CLIQUE_3_HH
 #define CLIQUE_3_HH
 
+#include <cstddef>
+
 #include "factorial.hh"
 
 template< typename Graph >
@@ -16,11 +18,11 @@ class Clique_3
     auto
     consteval operator()( void ) const
     {
-      int quantity_cliques = 0;
+      std::size_t quantity_cliques{ 0u };
 
-      for( int a = 0; a < size( graph ); ++a )
+      for( std::size_t a{ 0u }; a < size( graph ); ++a )
       {
-        for( int b = 0; b < size( graph ); ++b )
+        for( std::size_t b{ 0u }; b < size( graph ); ++b )
         {
           if( b == a ||
               0 == graph[ a ][ b ] )
@@ -28,7 +30,7 @@ class Clique_3
             continue;
           }
 
-          for( int c = 0; c < size( graph ); ++c )
+          for( std::size_t c{ 0u }; c < size( graph ); ++c )
           {
             if( c == a ||
                 c == b )
