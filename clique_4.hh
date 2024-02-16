@@ -3,63 +3,66 @@
 
 #include "factorial.hh"
 
-template< typename Graph >
-class Clique_4
+namespace cct
 {
-  private:
-    const Graph graph;
+  template< typename Graph >
+  class Clique_4
+  {
+    private:
+      const Graph graph;
 
-  public:
-    consteval Clique_4( Graph g ) : graph{ g }
-    {}
+    public:
+      consteval Clique_4( Graph g ) : graph{ g }
+      {}
 
-    auto
-    consteval operator()( void ) const
-    {
-      int quantity_cliques = 0;
-
-      for( int a = 0; a < size( graph ); ++a )
+      auto
+      consteval operator()( void ) const
       {
-        for( int b = 0; b < size( graph ); ++b )
-        {
-          if( b == a ||
-              0 == graph[ a ][ b ] )
-          {
-            continue;
-          }
+        int quantity_cliques = 0;
 
-          for( int c = 0; c < size( graph ); ++c )
+        for( int a = 0; a < size( graph ); ++a )
+        {
+          for( int b = 0; b < size( graph ); ++b )
           {
-            if( c == b ||
-                c == a ||
-                0 == graph[ a ][ c ] ||
-                0 == graph[ b ][ c ] )
+            if( b == a ||
+                0 == graph[ a ][ b ] )
             {
               continue;
             }
 
-            for( int d = 0; d < size( graph ); ++d )
+            for( int c = 0; c < size( graph ); ++c )
             {
-              if( d == a ||
-                  d == b ||
-                  d == c )
+              if( c == b ||
+                  c == a ||
+                  0 == graph[ a ][ c ] ||
+                  0 == graph[ b ][ c ] )
               {
                 continue;
               }
 
-              if( graph[ a ][ d ] &&
-                   graph[ b ][ d ] &&
-                   graph[ c ][ d ] )
+              for( int d = 0; d < size( graph ); ++d )
               {
-                ++quantity_cliques;
+                if( d == a ||
+                    d == b ||
+                    d == c )
+                {
+                  continue;
+                }
+
+                if( graph[ a ][ d ] &&
+                     graph[ b ][ d ] &&
+                     graph[ c ][ d ] )
+                {
+                  ++quantity_cliques;
+                }
               }
             }
           }
         }
-      }
 
-      return quantity_cliques / factorial< int, 4 >();
-    }
-};
+        return quantity_cliques / factorial< int, 4 >();
+      }
+  };
+}
 
 #endif
