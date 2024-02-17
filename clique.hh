@@ -23,23 +23,23 @@ namespace cct
         switch ( SizeClique )
         {
           case 1u:
-            quantity_cliques = Clique_1{ graph }();
+            quantity_cliques = cct::Clique_1{ graph }();
             break;
 
           case 2u:
-            quantity_cliques = Clique_2{ graph }();
+            quantity_cliques = cct::Clique_2{ graph }();
             break;
 
           case 3u:
-            quantity_cliques = Clique_3{ graph }();
+            quantity_cliques = cct::Clique_3{ graph }();
             break;
 
           case 4u:
-            quantity_cliques = Clique_4{ graph }();
+            quantity_cliques = cct::Clique_4{ graph }();
             break;
 
           case 5u:
-            quantity_cliques = Clique_5{ graph }();
+            quantity_cliques = cct::Clique_5{ graph }();
             break;
         }
       }
