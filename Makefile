@@ -16,6 +16,7 @@ clique.o: \
 
 clique.hh.gch: \
 	clique.hh \
+	clique_1.hh.gch \
 	clique_2.hh.gch \
 	clique_3.hh.gch \
 	clique_4.hh.gch \
