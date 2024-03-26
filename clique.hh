@@ -14,41 +14,42 @@ namespace cct
   template< std::size_t SizeClique >
   class Clique
   {
-    private:
-      std::size_t quantity_cliques{ 0u };
 
-    public:
-      consteval Clique( auto graph )
+  private:
+    std::size_t quantity_cliques{ 0u };
+
+  public:
+    consteval Clique( auto graph )
+    {
+      switch( SizeClique )
       {
-        switch ( SizeClique )
-        {
-          case 1u:
-            quantity_cliques = cct::Clique_1{ graph }();
-            break;
+        case 1u:
+          quantity_cliques = cct::Clique_1{ graph }();
+          break;
 
-          case 2u:
-            quantity_cliques = cct::Clique_2{ graph }();
-            break;
+        case 2u:
+          quantity_cliques = cct::Clique_2{ graph }();
+          break;
 
-          case 3u:
-            quantity_cliques = cct::Clique_3{ graph }();
-            break;
+        case 3u:
+          quantity_cliques = cct::Clique_3{ graph }();
+          break;
 
-          case 4u:
-            quantity_cliques = cct::Clique_4{ graph }();
-            break;
+        case 4u:
+          quantity_cliques = cct::Clique_4{ graph }();
+          break;
 
-          case 5u:
-            quantity_cliques = cct::Clique_5{ graph }();
-            break;
-        }
+        case 5u:
+          quantity_cliques = cct::Clique_5{ graph }();
+          break;
       }
+    }
 
-      auto
-      consteval operator()( void ) const
-      {
-        return quantity_cliques;
-      }
+    auto
+    consteval operator()( void ) const
+    {
+      return quantity_cliques;
+    }
   };
 
   template< std::size_t SizeClique >
