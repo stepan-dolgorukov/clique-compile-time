@@ -22,6 +22,10 @@ clique.hh.gch: \
 	clique_5.hh.gch
 	${CXX} ${FLAGS_CXX} $<
 
+clique_1.hh.gch: \
+	clique_1.hh
+	${CXX} ${FLAGS_CXX} $<
+
 clique_2.hh.gch: \
 	clique_2.hh
 	${CXX} ${FLAGS_CXX} $<
